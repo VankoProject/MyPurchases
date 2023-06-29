@@ -17,6 +17,7 @@ abstract class ShoppingDatabase : RoomDatabase() {
         @Volatile
         private var instance: ShoppingDatabase? = null
         private val LOCK = Any()
+        const val DB = "ShoppingDB.db"
 
         operator fun invoke(context: Context) = instance ?: synchronized(LOCK) {
             instance ?: createDatabase(context).also {
@@ -28,7 +29,7 @@ abstract class ShoppingDatabase : RoomDatabase() {
             Room.databaseBuilder(
                 context.applicationContext,
                 ShoppingDatabase::class.java,
-                "ShoppingDB.db"
+                DB
             ).build()
     }
 }
