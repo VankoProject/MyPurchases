@@ -3,6 +3,7 @@ package com.kliachenko
 import android.app.Application
 import com.kliachenko.mypurchases.di.appModule
 import com.kliachenko.mypurchases.di.dataModule
+import com.kliachenko.mypurchases.di.domainModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -13,7 +14,7 @@ class App : Application() {
 
         startKoin {
             androidContext(this@App)
-            modules(appModule, dataModule)
+            modules(appModule, dataModule, domainModule)
         }
     }
 }

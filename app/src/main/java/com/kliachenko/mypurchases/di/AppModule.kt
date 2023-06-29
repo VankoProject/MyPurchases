@@ -14,6 +14,4 @@ val appModule = module {
             upsertItemUseCase = get()
         )
     }
-
-
 }

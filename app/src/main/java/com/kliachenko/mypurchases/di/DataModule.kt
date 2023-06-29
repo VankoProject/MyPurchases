@@ -3,6 +3,7 @@ package com.kliachenko.mypurchases.di
 import androidx.room.Room
 import com.kliachenko.mypurchases.data.RepositoryImpl
 import com.kliachenko.mypurchases.data.database.ShoppingDatabase
+import com.kliachenko.mypurchases.domain.Repository
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
@@ -20,7 +21,7 @@ val dataModule = module {
         get<ShoppingDatabase>().getShoppingDao()
     }
 
-    single {
+    single<Repository> {
         RepositoryImpl(
             dao = get()
         )

@@ -6,16 +6,15 @@ import com.kliachenko.mypurchases.domain.model.ShoppingItem
 
     fun convertItemDbEntityToShoppingItem(item: ShoppingItemEntity) =
         ShoppingItem(
-            id = item.id,
             name = item.name,
-            amount = item.amount
+            amount = item.amount,
         )
 
     fun convertShoppingItemToItemDbEntity(item: ShoppingItem) =
         ShoppingItemEntity(
-            id = item.id,
             name = item.name,
-            amount = item.amount
+            amount = item.amount,
+            id = 0
         )
 
     fun convertListShoppingItemToListDbEntity(list: List<ShoppingItemEntity>) =
