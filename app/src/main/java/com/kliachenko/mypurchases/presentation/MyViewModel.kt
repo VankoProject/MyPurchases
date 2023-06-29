@@ -15,7 +15,7 @@ class MyViewModel(
 ): ViewModel() {
 
 
-    fun getAllShoppingItems() = getAllShoppingItemsUseCase
+    fun getAllShoppingItems() = getAllShoppingItemsUseCase.invoke()
 
 
     fun upsert(item: ShoppingItem) =
